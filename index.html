@@ -4,13 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10091f">
-
 <title>My Universe ♡</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -21,23 +17,19 @@
 
 body {
     min-height: 100vh;
-    overflow: hidden;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
     background:
-        radial-gradient(ellipse at 15% 20%, rgba(101,54,151,.35), transparent 45%),
-        radial-gradient(ellipse at 85% 80%, rgba(161,65,142,.24), transparent 45%),
-        radial-gradient(ellipse at 50% 50%, #211334, #10091f 75%);
-    color: white;
+        radial-gradient(ellipse at 15% 20%, #51316f, transparent 50%),
+        radial-gradient(ellipse at 85% 80%, #572b68, transparent 45%),
+        linear-gradient(135deg, #090817, #211334, #100b20);
 }
-
-/* STAR BACKGROUND */
 
 #stars {
     position: fixed;
     inset: 0;
-    overflow: hidden;
     pointer-events: none;
 }
 
@@ -45,22 +37,14 @@ body {
     position: absolute;
     border-radius: 50%;
     background: white;
-    box-shadow: 0 0 10px #d9b5ff;
+    box-shadow: 0 0 9px #e5c5ff;
     animation: twinkle ease-in-out infinite;
 }
 
 @keyframes twinkle {
-    0%, 100% {
-        opacity: .15;
-        transform: scale(.7);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.5);
-    }
+    0%, 100% { opacity: .2; transform: scale(.7); }
+    50% { opacity: 1; transform: scale(1.6); }
 }
-
-/* MAIN CARD */
 
 .main-card {
     position: relative;
@@ -68,65 +52,38 @@ body {
     width: min(90%, 470px);
     padding: 55px 35px 40px;
     text-align: center;
-
-    background: linear-gradient(
-        145deg,
-        rgba(255,255,255,.10),
-        rgba(255,255,255,.025)
-    );
-
-    border: 1px solid rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.2);
     border-radius: 30px;
-
+    background: rgba(255,255,255,.065);
     backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-
-    box-shadow:
-        0 20px 80px rgba(0,0,0,.35),
-        0 0 50px rgba(185,115,255,.09);
-
-    animation: cardAppear 1.5s ease;
+    box-shadow: 0 20px 80px rgba(0,0,0,.3),
+                0 0 50px rgba(185,115,255,.12);
+    animation: appear 1.5s ease;
 }
 
-@keyframes cardAppear {
-    from {
-        opacity: 0;
-        transform: translateY(35px) scale(.96);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+@keyframes appear {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-
-/* DECORATION */
 
 .heart {
-    font-size: 39px;
     color: #f3c0ed;
+    font-size: 39px;
     margin-bottom: 14px;
     text-shadow: 0 0 25px #ec8fe8;
-    animation: heartbeat 2.5s infinite;
-}
-
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.12); }
 }
 
 .logo {
     font-family: 'Great Vibes', cursive;
     font-size: 57px;
-    font-weight: normal;
     color: #f8dafa;
-    text-shadow: 0 0 25px rgba(235,174,255,.3);
 }
 
 .subtitle {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
     font-style: italic;
     letter-spacing: 2px;
+    font-size: 16px;
     color: #c8b3db;
     margin-top: 5px;
 }
@@ -138,34 +95,25 @@ body {
     background: linear-gradient(90deg, transparent, #e9b6ed, transparent);
 }
 
-/* QUESTION */
-
 .question {
     font-family: 'Great Vibes', cursive;
     font-size: clamp(34px, 8vw, 45px);
-    line-height: 1.3;
     color: #fff0ff;
     margin-bottom: 28px;
 }
-
-/* INPUT */
 
 .input-box {
     width: 100%;
     height: 60px;
     padding: 10px 18px;
-
     border: 1px solid rgba(231,186,255,.4);
     border-radius: 15px;
     outline: none;
-
     background: rgba(255,255,255,.06);
     color: #fff0ff;
-
     text-align: center;
     font-family: 'Great Vibes', cursive;
     font-size: 31px;
-
     transition: .4s;
 }
 
@@ -175,28 +123,19 @@ body {
 
 .input-box:focus {
     border-color: #efb6ed;
-    background: rgba(255,255,255,.10);
-    box-shadow: 0 0 25px rgba(217,142,255,.18);
+    box-shadow: 0 0 25px rgba(217,142,255,.2);
 }
-
-/* BUTTON */
 
 .continue {
     width: 100%;
     height: 57px;
     margin-top: 22px;
-
     border: 1px solid rgba(255,255,255,.3);
     border-radius: 15px;
-
     background: linear-gradient(110deg, #d3a0e7, #f0b9dc);
     color: #281532;
-
     font-family: 'Cormorant Garamond', serif;
     font-size: 21px;
-    font-weight: 600;
-    letter-spacing: 1px;
-
     cursor: pointer;
     transition: .35s;
 }
@@ -204,10 +143,6 @@ body {
 .continue:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(221,155,240,.3);
-}
-
-.continue:active {
-    transform: scale(.97);
 }
 
 .footer {
@@ -219,26 +154,15 @@ body {
 
 #error {
     margin-top: 12px;
-    font-family: 'Cormorant Garamond', serif;
     color: #ffd2ec;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 17px;
     min-height: 20px;
 }
 
-/* MOBILE */
-
-@media(max-width: 480px) {
-    .main-card {
-        padding: 45px 23px 32px;
-    }
-
-    .logo {
-        font-size: 49px;
-    }
-
-    .question {
-        font-size: 36px;
-    }
+@media(max-width:480px) {
+    .main-card { padding: 45px 23px 32px; }
+    .logo { font-size: 49px; }
 }
 </style>
 </head>
@@ -253,9 +177,7 @@ body {
 
     <h1 class="logo">My Universe</h1>
 
-    <p class="subtitle">
-        a little world made for you
-    </p>
+    <p class="subtitle">a little world made for you</p>
 
     <div class="divider"></div>
 
@@ -278,70 +200,46 @@ body {
 
     <p id="error"></p>
 
-    <div class="footer">
-        made with love
-    </div>
+    <div class="footer">made with love</div>
 
 </main>
 
 <script>
-
-/* CREATE STARS */
-
 const stars = document.getElementById("stars");
 
 for (let i = 0; i < 220; i++) {
-
     const star = document.createElement("span");
-
     star.className = "star";
 
     const size = Math.random() * 2.2 + 0.6;
 
     star.style.width = size + "px";
     star.style.height = size + "px";
-
     star.style.left = Math.random() * 100 + "%";
     star.style.top = Math.random() * 100 + "%";
-
-    star.style.animationDuration =
-        (2 + Math.random() * 4) + "s";
-
-    star.style.animationDelay =
-        Math.random() * 5 + "s";
+    star.style.animationDuration = (2 + Math.random() * 4) + "s";
+    star.style.animationDelay = Math.random() * 5 + "s";
 
     stars.appendChild(star);
 }
 
-/* CONTINUE */
-
 function continuePage() {
-
-    const nickname = document
-        .getElementById("nickname")
-        .value.trim();
-
+    const nickname = document.getElementById("nickname").value.trim();
     const error = document.getElementById("error");
 
     if (!nickname) {
-        error.textContent = "Сначала напиши, как хочешь меня называть ♡";
+        error.textContent = "Пожалуйста, напиши своё обращение ♡";
         return;
     }
-
-    error.textContent = "";
 
     alert("Очень приятно, " + nickname + " ♡");
 }
 
-document.getElementById("nickname")
-.addEventListener("keydown", function(event) {
-
+document.getElementById("nickname").addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         continuePage();
     }
-
 });
-
 </script>
 
 </body>
